@@ -1,0 +1,88 @@
+#+LATEX_CLASS: article
+#+LATEX_CLASS_OPTIONS: [a4paper]
+#+OPTIONS: H:3 num:1
+#+LATEX_HEADER: \usepackage[margin=3cm]{geometry} 	   % Choose your margin here. 
+#+LATEX_HEADER: \usepackage{tikz,pgfplots} 
+#+LATEX_HEADER: \usetikzlibrary{calc,patterns,arrows,decorations.pathmorphing,decorations.markings}
+#+LATEX_HEADER: \usepackage{array,makecell,multirow} 
+#+LATEX_HEADER: \pgfplotsset{width=16cm,height=6cm, compat=1.8}
+#+LATEX_HEADER: \usepackage{amsmath,mathtools,amssymb,mathrsfs}  
+
+* Norms
+** properties
+\begin{enumerate}
+\item $\|x\| \geq 0, \text { and }\|x\|=0 \Longleftrightarrow x=0$
+\item $\|\alpha x\|=|\alpha|\|x\|$
+\item $\|x+y\| \leq\|x\|+\|y\|$
+\end{enumerate}
+
+$$
+\|A\|_{1}=\max _{1 \leq j \leq n} \sum_{i=1}^{m}\left|a_{i j}\right|
+$$
+
+$$
+\|A\|_{\infty}=\max _{1 \leq i \leq m} \sum_{j=1}^{n}\left|a_{i j}\right|
+$$
+
+
+* svd 
+Example: 
+$A=\left[\begin{array}{lll}{0} & {1} & {1} \\ {\sqrt{2}} & {2} & {0} \\ {0} & {1} & {1}\end{array}\right]$
+
+The SVD is defined as
+$$
+A=P \Sigma Q^{T}
+$$
+
+** Method
+Computing:
+$$
+A A^{T}=\left[\begin{array}{lll}{2} & {2} & {2} \\ {2} & {6} & {2} \\ {2} & {2} & {2}\end{array}\right]
+$$
+
+\begin{equation}
+\begin{aligned}
+-\lambda^{3}+10 \lambda^{2}-16 \lambda &=-\lambda\left(\lambda^{2}-10 \lambda+16\right) \\
+ &=-\lambda(\lambda-8)(\lambda-2) 
+\end{aligned}
+\end{equation}
+
+
+Eigenvals of $A A^{T}$ are $\lambda=8, \lambda=2, \lambda=0$, thus the singular values
+ are $\sigma_{1}=2 \sqrt{2}, \sigma_{2}=\sqrt{2}\left(\text { and } \sigma_{3}=0\right)$.
+
+
+Giving out the matrix
+$$
+\Sigma= 0_{3x3}+\sigma=
+\left[\begin{array}{ccc}{2 \sqrt{2}} & {0} & {0} \\ {0} & {\sqrt{2}} & {0} \\ {0} & {0} & {0}\end{array}\right]
+$$
+
+
+Finding the eigenvectors $(A-\lambda I) \mathbf{x}=\mathbf{0}$, we get respetivly to the egienvector
+ who is described before: $p_{1}=\left(\frac{1}{\sqrt{6}}, \frac{2}{\sqrt{6}}, \frac{1}{\sqrt{6}}\right)$,
+ $p_{2}=\left(-\frac{1}{\sqrt{3}}, \frac{1}{\sqrt{3}},-\frac{1}{\sqrt{3}}\right)$ and 
+$p_{3}=\left(\frac{1}{\sqrt{2}}, 0,-\frac{1}{\sqrt{2}}\right)$ (note: normalised vectors).
+
+Yeilding
+
+$$
+P= \left[  {p_1}^T {p_2}^T {p_3}^T     \right]
+=\left[\begin{array}{ccc}{\frac{1}{\sqrt{6}}} & {-\frac{1}{\sqrt{3}}} & {\frac{1}{\sqrt{2}}} \\ {\frac{2}{\sqrt{6}}} & {\frac{1}{\sqrt{3}}} & {0} \\ {\frac{1}{\sqrt{6}}} & {-\frac{1}{\sqrt{3}}} & {-\frac{1}{\sqrt{2}}}\end{array}\right]
+$$
+
+
+
+
+$$
+A^{T} A=\left[\begin{array}{ccc}{2} & {2 \sqrt{2}} & {0} \\ {2 \sqrt{2}} & {6} & {2} \\ {0} & {2} & {2}\end{array}\right]
+$$
+With the eigenvals $\lambda=8, \lambda=2, \lambda=0$ with eigenvectors
+$q_{1}=\left(\frac{1}{\sqrt{6}}, \frac{3}{\sqrt{12}}, \frac{1}{\sqrt{12}}\right), q_{2}=\left(\frac{1}{\sqrt{3}}, 0,-\frac{2}{\sqrt{6}}\right) \text { and } q_{3}=\left(\frac{1}{\sqrt{2}},-\frac{1}{2}, \frac{1}{2}\right)$. (Acually
+ can also use the the formula $p_{i}=\frac{1}{\sigma_{i}} A^{T} p_{i}$ to get the various $q_i$.
+
+
+$$
+Q=\left[  {q_1}^T {q_2}^T {q_3}^T     \right]
+\left[\begin{array}{ccc}{\frac{1}{\sqrt{6}}} & {\frac{1}{\sqrt{3}}} & {\frac{1}{\sqrt{2}}} \\ {\frac{3}{\sqrt{12}}} & {0} & {-\frac{1}{2}} \\ {\frac{1}{\sqrt{12}}} & {-\frac{2}{\sqrt{6}}} & {\frac{1}{2}}\end{array}\right]
+$$

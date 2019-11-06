@@ -8,6 +8,10 @@
 #+LATEX_HEADER: \pgfplotsset{width=16cm,height=6cm, compat=1.8}
 #+LATEX_HEADER: \usepackage{amsmath,mathtools,amssymb,mathrsfs}  
 
+Things i keep forgetting
+#+ATTR_LaTeX: :height 0.2\textwidth :center
+[[./imgs/5332.png]]
+
 * Norms
 ** properties
 \begin{enumerate}
@@ -24,6 +28,11 @@ $$
 \|A\|_{2}=\sqrt{\lambda_{\max }\left(A^{T} A\right)}
 $$
 
+Frobenius norm, sometimes also called the Euclidean norm
+
+$$
+\|\mathrm{A}\|_{F} \equiv \sqrt{\sum_{i=1}^{m} \sum_{j=1}^{n}\left|a_{i j}\right|^{2}}
+$$
 
 $$
 \|A\|_{\infty}=\max _{1 \leq i \leq m} \sum_{j=1}^{n}\left|a_{i j}\right|

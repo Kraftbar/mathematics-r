@@ -21,11 +21,16 @@ $$
 $$
 
 $$
+\|A\|_{2}=\sqrt{\lambda_{\max }\left(A^{T} A\right)}
+$$
+
+
+$$
 \|A\|_{\infty}=\max _{1 \leq i \leq m} \sum_{j=1}^{n}\left|a_{i j}\right|
 $$
 
 
-* svd 
+* SVD
 Example: 
 $A=\left[\begin{array}{lll}{0} & {1} & {1} \\ {\sqrt{2}} & {2} & {0} \\ {0} & {1} & {1}\end{array}\right]$
 
@@ -86,3 +91,11 @@ $$
 Q=\left[  {q_1}^T {q_2}^T {q_3}^T     \right]
 \left[\begin{array}{ccc}{\frac{1}{\sqrt{6}}} & {\frac{1}{\sqrt{3}}} & {\frac{1}{\sqrt{2}}} \\ {\frac{3}{\sqrt{12}}} & {0} & {-\frac{1}{2}} \\ {\frac{1}{\sqrt{12}}} & {-\frac{2}{\sqrt{6}}} & {\frac{1}{2}}\end{array}\right]
 $$
+
+
+We have then the SVD defined as
+$$
+A=P \Sigma Q^{T}
+$$
+
+* Covar 
